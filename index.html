@@ -7,10 +7,11 @@
 <meta name="description" content="The best online off-road stores ranked for parts, accessories, and gear. See our 2026 rankings with honest ratings.">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#151a1e;--panel:#1c2128;--panel-soft:#161b22;--line:#2d333b;--text:#d0d8e0;--muted:#9aa4af;--green:#22c55e;--green-soft:#86efac;--gold:#f59e0b;--navy:#0d1117}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Nunito',sans-serif;background:#151a1e;color:#d0d8e0;line-height:1.7}
+body{font-family:'Nunito',sans-serif;background:radial-gradient(circle at top,rgba(34,197,94,.08),transparent 32%),var(--bg);color:var(--text);line-height:1.7}
 h1,h2,h3,h4{font-family:'Rajdhani',sans-serif;letter-spacing:.5px}
-a{color:#22c55e;text-decoration:none}a:hover{text-decoration:underline}
+a{color:var(--green);text-decoration:none}a:hover{text-decoration:underline}
 
 .animate-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}.animate-in.visible{opacity:1;transform:translateY(0)}
 .card{transition:transform .3s ease,box-shadow .3s ease}.card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
@@ -20,20 +21,27 @@ tr{transition:background .2s}table tr:hover{background:rgba(255,255,255,.05)}.st
 @keyframes slideIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-nav{background:#0d1117;padding:14px 20px;position:sticky;top:0;z-index:100;border-bottom:2px solid #22c55e}
+nav{background:rgba(13,17,23,.94);backdrop-filter:blur(10px);padding:14px 20px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(34,197,94,.4)}
 nav .inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-nav .logo{font-family:'Rajdhani',sans-serif;font-size:1.5rem;color:#22c55e;font-weight:700}
-nav ul{list-style:none;display:flex;gap:22px}nav ul li a{color:#aaa;font-size:.9rem;font-weight:500}nav ul li a:hover{color:#22c55e;text-decoration:none}
+nav .logo{font-family:'Rajdhani',sans-serif;font-size:1.5rem;color:var(--green);font-weight:700}
+nav ul{list-style:none;display:flex;gap:22px}nav ul li a{color:#aaa;font-size:.9rem;font-weight:500}nav ul li a:hover{color:var(--green);text-decoration:none}
 
-.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('images/hero.png') center/cover;padding:100px 20px;text-align:center;min-height:480px;display:flex;align-items:center;justify-content:center}
-.hero-inner{max-width:800px}
-.hero .badge{display:inline-block;background:#22c55e;color:#111;font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:4px;margin-bottom:16px;animation:fadeIn .6s ease forwards;opacity:0}
-.hero h1{font-size:3rem;color:#fff;animation:slideIn .8s ease forwards}
-.hero p{font-size:1.1rem;color:#bbb;animation:fadeIn 1s ease .3s forwards;opacity:0;margin-top:14px}
+.hero{position:relative;background:linear-gradient(120deg,rgba(9,12,15,.78),rgba(9,12,15,.46) 55%,rgba(34,197,94,.18)),url('images/hero.png') center/cover;padding:92px 20px 70px;min-height:460px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(180deg,rgba(21,26,30,0),var(--bg))}
+.hero-inner{position:relative;z-index:1;max-width:1100px;width:100%;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:26px;align-items:end}
+.hero-copy{max-width:720px}
+.hero .badge{display:inline-block;background:var(--green);color:#111;font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:999px;margin-bottom:16px;animation:fadeIn .6s ease forwards;opacity:0}
+.hero h1{font-size:3.3rem;color:#fff;animation:slideIn .8s ease forwards;max-width:12ch;line-height:.95}
+.hero p{font-size:1.08rem;color:#c5cbd3;animation:fadeIn 1s ease .3s forwards;opacity:0;margin-top:16px;max-width:58ch}
+.hero-panel{position:relative;z-index:1;background:rgba(13,17,23,.84);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;box-shadow:0 22px 40px rgba(0,0,0,.28)}
+.hero-panel h2{font-size:1.25rem;color:#fff;margin-bottom:10px}
+.hero-panel ul{list-style:none;display:grid;gap:10px}
+.hero-panel li{font-size:.92rem;color:#c8d1da;padding-left:18px;position:relative}
+.hero-panel li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--green)}
 
-.section{max-width:1100px;margin:0 auto;padding:60px 20px}
+.section{max-width:1100px;margin:0 auto;padding:34px 20px}
 .section-title{font-size:2rem;color:#fff;margin-bottom:8px;text-align:center}
-.section-sub{text-align:center;color:#777;margin-bottom:40px}
+.section-sub{text-align:center;color:#777;margin-bottom:24px}
 
 /* Store rank cards */
 .store-card{background:#1c2128;border-radius:16px;overflow:hidden;margin-bottom:24px;display:grid;grid-template-columns:80px 1fr;border:1px solid #2d333b;box-shadow:0 18px 36px rgba(0,0,0,.24)}
@@ -77,11 +85,11 @@ nav ul{list-style:none;display:flex;gap:22px}nav ul li a{color:#aaa;font-size:.9
 
 /* Comparison table */
 .table-wrap{overflow-x:auto;margin-top:20px}
-table{width:100%;border-collapse:collapse;font-size:.88rem}
-thead{background:#22c55e}th{color:#111;padding:12px 14px;text-align:left;font-weight:700}
-td{padding:12px 14px;border-bottom:1px solid #2d333b}
+table{width:100%;border-collapse:collapse;font-size:.88rem;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+thead{background:var(--green)}th{color:#111;padding:12px 14px;text-align:left;font-weight:700}
+td{padding:12px 14px;border-bottom:1px solid var(--line)}
 tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
-.check{color:#22c55e}.cross{color:#e55}
+.check{color:var(--green)}.cross{color:#e55}
 
 /* Manufacturer section */
 .mfg-section{background:#1c2128;border-radius:12px;padding:36px;margin-top:50px;border:1px solid #2d333b}
@@ -95,14 +103,21 @@ tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
 .our-take{background:#1c2128;border-left:4px solid #22c55e;border-radius:8px;padding:32px;margin-top:50px}
 .our-take h2{color:#22c55e;margin-bottom:12px}.our-take p{color:#aaa;margin-bottom:12px}
 
-footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px solid #22c55e}
+footer{background:var(--navy);padding:50px 20px 24px;margin-top:32px;border-top:1px solid rgba(34,197,94,.35)}
 .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px}
-.footer-col h4{color:#22c55e;font-size:1rem;margin-bottom:12px;font-family:'Rajdhani',sans-serif}
-.footer-col ul{list-style:none}.footer-col li{margin-bottom:8px}.footer-col a{color:#888;font-size:.85rem}.footer-col a:hover{color:#22c55e}
-.footer-bottom{max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid #2d333b;text-align:center;color:#555;font-size:.8rem}
-.affiliate-disc{max-width:1200px;margin:0 auto;padding:20px;background:#161b22;border-radius:8px;text-align:center;font-size:.78rem;color:#666;margin-top:20px}
+.footer-col h4{color:var(--green);font-size:1rem;margin-bottom:12px;font-family:'Rajdhani',sans-serif}
+.footer-col ul{list-style:none}.footer-col li{margin-bottom:8px}.footer-col a{color:#888;font-size:.85rem}.footer-col a:hover{color:var(--green)}
+.footer-bottom{max-width:1200px;margin:22px auto 0;padding-top:20px;border-top:1px solid var(--line);text-align:center;color:#555;font-size:.8rem}
+.affiliate-disc{max-width:1200px;margin:0 auto;padding:18px 20px;background:#161b22;border-radius:12px;text-align:center;font-size:.78rem;color:#7f8b97;margin-top:20px;border:1px solid rgba(255,255,255,.05)}
+.network-band{max-width:1200px;margin:6px auto 0;padding:0 20px 6px}
+.network-shell{background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(13,17,23,.9));border:1px solid rgba(34,197,94,.2);border-radius:18px;padding:24px}
+.network-shell h3{font-size:1.1rem;color:#fff;margin-bottom:8px}
+.network-shell p{color:#9aa4af;font-size:.92rem;margin-bottom:16px;max-width:58ch}
+.network-links{display:flex;flex-wrap:wrap;gap:10px}
+.network-links a{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#dce3ea;font-size:.88rem}
+.network-links a:hover{background:rgba(34,197,94,.15);color:#fff;text-decoration:none}
 
-@media(max-width:768px){.hero h1{font-size:2rem}nav ul{display:none}.store-card{grid-template-columns:60px 1fr}.store-brand{min-height:160px;padding:14px}.store-brand-inner{max-width:100%}.store-brand-mark{font-size:2.2rem;right:14px;top:14px}.mfg-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.hero{padding:78px 20px 52px;min-height:auto}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:2.35rem;max-width:none}nav ul{display:none}.store-card{grid-template-columns:60px 1fr}.store-brand{min-height:160px;padding:14px}.store-brand-inner{max-width:100%}.store-brand-mark{font-size:2.2rem;right:14px;top:14px}.mfg-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -114,9 +129,20 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 
 <section class="hero">
 <div class="hero-inner">
+<div class="hero-copy">
 <span class="badge">⚡ 2026 STORE RANKINGS</span>
 <h1>Top Off-Road Stores — Ranked &amp; Reviewed</h1>
 <p>20+ online off-road retailers compared on product range, pricing, shipping speed, return policies, and customer service. Here are the top-ranked stores.</p>
+</div>
+<aside class="hero-panel">
+<h2>What Separates a Real Off-Road Store</h2>
+<ul>
+<li>Catalog depth that goes past cosmetic bolt-ons</li>
+<li>Staff who know suspension, fabrication, and fitment</li>
+<li>Clear return policies for expensive hard parts</li>
+<li>Direct-buy brands worth skipping the middleman for</li>
+</ul>
+</aside>
 </div>
 </section>
 
@@ -272,20 +298,23 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 </div>
 </section>
 
-<section class="cross-links-box" style="background:#f8f6f0;border:1px solid #ddd;border-radius:8px;padding:1.2rem 1.5rem;margin:2rem auto;max-width:1200px;">
-<strong style="font-size:.95rem;">More Seat Cover Reviews From Our Network</strong>
-<ul style="margin:.6rem 0 0 1.2rem;font-size:.92rem;line-height:1.8;">
-<li><a href="https://bestseatcover.com">Best Seat Cover reviews &amp; rankings</a></li>
-<li><a href="https://wranglerseatcover.com">Jeep Wrangler seat cover guide</a></li>
-<li><a href="https://jlseatcovers.com">Jeep JL &amp; JLU seat covers</a></li>
-<li><a href="https://jeepseatcover.com">All Jeep seat cover comparisons</a></li>
-<li><a href="https://tacticalseatcovers.com">Tactical seat cover rankings</a></li>
-<li><a href="https://tacomaseats.com">Toyota Tacoma seat covers</a></li>
-<li><a href="https://gladiatorseatcover.com">Jeep Gladiator seat covers</a></li>
-<li><a href="https://broncoseatcover.com">Ford Bronco seat covers</a></li>
-<li><a href="https://bestbroncoaccessories.com">Best Bronco accessories</a></li>
-<li><a href="https://besttruckaccessories.com">Best truck accessories</a></li>
-</ul>
+<section class="network-band">
+<div class="network-shell">
+<h3>More 4x4 Buying Guides From Our Network</h3>
+<p>If you already know the retailer and need the actual product picks, these companion sites narrow the field fast by vehicle and category.</p>
+<div class="network-links">
+<a href="https://bestseatcover.com">Best Seat Cover</a>
+<a href="https://wranglerseatcover.com">Wrangler Seat Cover</a>
+<a href="https://jlseatcovers.com">JL Seat Covers</a>
+<a href="https://jeepseatcover.com">Jeep Seat Cover</a>
+<a href="https://tacticalseatcovers.com">Tactical Seat Covers</a>
+<a href="https://tacomaseats.com">Tacoma Seats</a>
+<a href="https://gladiatorseatcover.com">Gladiator Seat Cover</a>
+<a href="https://broncoseatcover.com">Bronco Seat Cover</a>
+<a href="https://bestbroncoaccessories.com">Best Bronco Accessories</a>
+<a href="https://besttruckaccessories.com">Best Truck Accessories</a>
+</div>
+</div>
 </section>
 <footer>
 <div class="footer-grid">
