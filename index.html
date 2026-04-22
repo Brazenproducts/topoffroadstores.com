@@ -36,10 +36,24 @@ nav ul{list-style:none;display:flex;gap:22px}nav ul li a{color:#aaa;font-size:.9
 .section-sub{text-align:center;color:#777;margin-bottom:40px}
 
 /* Store rank cards */
-.store-card{background:#1c2128;border-radius:12px;overflow:hidden;margin-bottom:24px;display:grid;grid-template-columns:80px 1fr;border:1px solid #2d333b}
+.store-card{background:#1c2128;border-radius:16px;overflow:hidden;margin-bottom:24px;display:grid;grid-template-columns:80px 1fr;border:1px solid #2d333b;box-shadow:0 18px 36px rgba(0,0,0,.24)}
 .store-rank{display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:#22c55e;background:#161b22;border-right:1px solid #2d333b}
 .store-rank.gold{color:#f59e0b;background:#1a1800}
 .store-body{padding:24px}
+.store-brand{position:relative;display:flex;align-items:flex-end;min-height:190px;border-radius:12px;padding:18px;margin-bottom:18px;background:linear-gradient(135deg,#24303b 0%,#11161c 100%);overflow:hidden;border:1px solid rgba(255,255,255,.07)}
+.store-brand::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.18));pointer-events:none}
+.store-brand-inner{position:relative;z-index:1;max-width:70%}
+.store-kicker{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d1d5db;background:rgba(0,0,0,.28);padding:5px 10px;border-radius:999px;margin-bottom:10px}
+.store-brand-name{font-family:'Rajdhani',sans-serif;font-size:2rem;line-height:1;margin-bottom:8px;color:#fff;text-transform:uppercase}
+.store-brand-note{font-size:.92rem;color:#d4d8dd;max-width:36ch}
+.store-brand-mark{position:absolute;right:18px;top:18px;font-family:'Rajdhani',sans-serif;font-size:3.2rem;font-weight:700;line-height:1;color:rgba(255,255,255,.12);letter-spacing:.04em;text-transform:uppercase}
+.store-brand.kartek{background:linear-gradient(135deg,#4b0f0f 0%,#181818 55%,#0b0b0b 100%)}
+.store-brand.bullstrap{background:linear-gradient(135deg,#6c1020 0%,#161616 62%,#050505 100%)}
+.store-brand.quadratec{background:linear-gradient(135deg,#2c4f1e 0%,#111a10 62%,#060806 100%)}
+.store-brand.extremeterrain{background:linear-gradient(135deg,#7c2d12 0%,#1a1a1a 58%,#090909 100%)}
+.store-brand.orw{background:linear-gradient(135deg,#0f3a53 0%,#13202a 55%,#0b1116 100%)}
+.store-brand.gearup{background:linear-gradient(135deg,#5b4a11 0%,#1f2115 60%,#0d0f09 100%)}
+.store-brand.cjpony{background:linear-gradient(135deg,#1e3a8a 0%,#161c2f 55%,#0c1020 100%)}
 .store-body h3{color:#fff;font-size:1.3rem;margin-bottom:4px}
 .store-body .stars{color:#f59e0b;font-size:.95rem;margin-bottom:8px}
 .store-body .store-meta{display:flex;gap:16px;font-size:.82rem;color:#888;margin-bottom:10px;flex-wrap:wrap}
@@ -47,6 +61,14 @@ nav ul{list-style:none;display:flex;gap:22px}nav ul li a{color:#aaa;font-size:.9
 .store-body p{color:#999;font-size:.92rem;margin-bottom:14px}
 .store-body .btn-row{display:flex;gap:10px;flex-wrap:wrap}
 .pick-label{display:inline-block;background:#22c55e;color:#111;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.mfg-card{background:#161b22;border-radius:10px;padding:20px;border-left:3px solid #22c55e;box-shadow:0 10px 22px rgba(0,0,0,.18)}
+.mfg-brand{display:flex;align-items:flex-end;min-height:120px;border-radius:8px;padding:14px;margin-bottom:12px;background:linear-gradient(135deg,#1f2937 0%,#111827 100%);position:relative;overflow:hidden}
+.mfg-brand::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.12));pointer-events:none}
+.mfg-brand strong{position:relative;z-index:1;font-family:'Rajdhani',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.mfg-brand.bartact{background:linear-gradient(135deg,#6b3f14 0%,#1a1410 60%,#0f0a07 100%)}
+.mfg-brand.carli{background:linear-gradient(135deg,#1e40af 0%,#172033 58%,#0a1020 100%)}
+.mfg-brand.rigid{background:linear-gradient(135deg,#5b4a11 0%,#1d1a10 62%,#0c0a07 100%)}
+.mfg-brand.warn{background:linear-gradient(135deg,#7f1d1d 0%,#241313 60%,#100909 100%)}
 
 .buy-btn{display:inline-block;padding:10px 22px;border-radius:6px;font-weight:600;font-size:.88rem;text-align:center}
 .btn-store{background:#2563EB;color:#fff}.btn-store:hover{color:#fff;text-decoration:none}
@@ -80,7 +102,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 .footer-bottom{max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid #2d333b;text-align:center;color:#555;font-size:.8rem}
 .affiliate-disc{max-width:1200px;margin:0 auto;padding:20px;background:#161b22;border-radius:8px;text-align:center;font-size:.78rem;color:#666;margin-top:20px}
 
-@media(max-width:768px){.hero h1{font-size:2rem}nav ul{display:none}.store-card{grid-template-columns:60px 1fr}.mfg-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.hero h1{font-size:2rem}nav ul{display:none}.store-card{grid-template-columns:60px 1fr}.store-brand{min-height:160px;padding:14px}.store-brand-inner{max-width:100%}.store-brand-mark{font-size:2.2rem;right:14px;top:14px}.mfg-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -105,6 +127,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank gold">#1</div>
 <div class="store-body">
+<div class="store-brand kartek"><div class="store-brand-inner"><span class="store-kicker">Race-Proven Retailer</span><div class="store-brand-name">Kartek</div><p class="store-brand-note">Fabrication, suspension, drivetrain, and desert-race hardware for people building real off-road trucks.</p></div><div class="store-brand-mark">K</div></div>
 <h3>Kartek Off-Road <span class="pick-label">🏆 EDITOR'S CHOICE</span></h3>
 <div class="stars">★★★★★ <span style="color:#888;font-size:.82rem">4.9/5</span></div>
 <div class="store-meta"><span>🚚 Fast Shipping</span><span>↩️ 30-Day Returns</span><span>📞 Expert Support</span></div>
@@ -116,6 +139,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank">#2</div>
 <div class="store-body">
+<div class="store-brand bullstrap"><div class="store-brand-inner"><span class="store-kicker">Manufacturer Direct</span><div class="store-brand-name">Bull Strap</div><p class="store-brand-note">Direct-from-brand limit straps, tie-downs, and trail gear with a made-in-USA identity that actually feels distinct.</p></div><div class="store-brand-mark">BS</div></div>
 <h3>Bull Strap</h3>
 <div class="stars">★★★★★ <span style="color:#888;font-size:.82rem">4.8/5</span></div>
 <div class="store-meta"><span>🚚 Free Shipping $75+</span><span>↩️ 30-Day Returns</span><span>🏭 Manufacturer Direct</span></div>
@@ -127,6 +151,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank">#3</div>
 <div class="store-body">
+<div class="store-brand quadratec"><div class="store-brand-inner"><span class="store-kicker">Jeep Authority</span><div class="store-brand-name">Quadratec</div><p class="store-brand-note">Wrangler and Gladiator specialists with deep fitment coverage, catalog depth, and decades of Jeep-specific trust.</p></div><div class="store-brand-mark">Q</div></div>
 <h3>Quadratec</h3>
 <div class="stars">★★★★☆ <span style="color:#888;font-size:.82rem">4.5/5</span></div>
 <div class="store-meta"><span>🚚 Free Shipping $99+</span><span>↩️ 60-Day Returns</span><span>🔧 Jeep Specialist</span></div>
@@ -138,6 +163,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank">#4</div>
 <div class="store-body">
+<div class="store-brand extremeterrain"><div class="store-brand-inner"><span class="store-kicker">Content-Heavy Storefront</span><div class="store-brand-name">ExtremeTerrain</div><p class="store-brand-note">Big-brand selection wrapped in customer photos, install guides, and a homepage that feels built for enthusiasts, not spreadsheets.</p></div><div class="store-brand-mark">XT</div></div>
 <h3>ExtremeTerrain</h3>
 <div class="stars">★★★★☆ <span style="color:#888;font-size:.82rem">4.4/5</span></div>
 <div class="store-meta"><span>🚚 Free Shipping</span><span>↩️ 30-Day Returns</span><span>📸 Great Reviews</span></div>
@@ -149,6 +175,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank">#5</div>
 <div class="store-body">
+<div class="store-brand orw"><div class="store-brand-inner"><span class="store-kicker">SoCal Shop Heritage</span><div class="store-brand-name">ORW</div><p class="store-brand-note">The brick-and-mortar energy matters here: installs, local reputation, and the feeling that real staff will answer the phone.</p></div><div class="store-brand-mark">ORW</div></div>
 <h3>Off Road Warehouse</h3>
 <div class="stars">★★★★☆ <span style="color:#888;font-size:.82rem">4.3/5</span></div>
 <div class="store-meta"><span>🏪 Brick & Mortar</span><span>🔧 Install Services</span><span>📞 Expert Staff</span></div>
@@ -160,6 +187,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank">#6</div>
 <div class="store-body">
+<div class="store-brand gearup"><div class="store-brand-inner"><span class="store-kicker">Overland Curator</span><div class="store-brand-name">Gear Up To Go</div><p class="store-brand-note">Less catalog sprawl, more curated overlanding gear for buyers who want a cleaner front door into expedition parts.</p></div><div class="store-brand-mark">G2G</div></div>
 <h3>Gear Up to Go</h3>
 <div class="stars">★★★★☆ <span style="color:#888;font-size:.82rem">4.2/5</span></div>
 <div class="store-meta"><span>🚚 Fast Shipping</span><span>↩️ 30-Day Returns</span><span>🏕️ Overland Focus</span></div>
@@ -171,6 +199,7 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <div class="store-card card animate-in">
 <div class="store-rank">#7</div>
 <div class="store-body">
+<div class="store-brand cjpony"><div class="store-brand-inner"><span class="store-kicker">Ford-First Catalog</span><div class="store-brand-name">CJ Pony Parts</div><p class="store-brand-note">A Ford performance shop that broadened into Bronco and truck gear without losing that catalog-organized muscle-car discipline.</p></div><div class="store-brand-mark">CJ</div></div>
 <h3>CJ Pony Parts</h3>
 <div class="stars">★★★★☆ <span style="color:#888;font-size:.82rem">4.1/5</span></div>
 <div class="store-meta"><span>🚚 Free Shipping $99+</span><span>↩️ 30-Day Returns</span><span>🏎️ Ford Specialist</span></div>
@@ -204,24 +233,28 @@ footer{background:#0d1117;padding:50px 20px 24px;margin-top:60px;border-top:2px 
 <h2>⚡ Top Manufacturers — Buy Direct</h2>
 <div class="mfg-grid">
 <div class="mfg-card">
+<div class="mfg-brand bartact"><strong>Bartact</strong></div>
 <h4>Bartact <span class="pick-label">🏆 #1</span></h4>
 <div class="stars">★★★★★</div>
 <p>Tactical seat covers, MOLLE gear, paracord grab handles. Made in USA.</p>
 <a href="https://bartact.com" target="_blank" class="buy-btn btn-bartact" style="font-size:.8rem;padding:8px 14px">Visit Bartact →</a>
 </div>
 <div class="mfg-card">
+<div class="mfg-brand carli"><strong>Carli</strong></div>
 <h4>Carli Suspension</h4>
 <div class="stars">★★★★★</div>
 <p>Premium suspension systems for Ram and Ford trucks.</p>
 <a href="https://carlisuspension.com" target="_blank" class="buy-btn btn-store" style="font-size:.8rem;padding:8px 14px">Visit Carli →</a>
 </div>
 <div class="mfg-card">
+<div class="mfg-brand rigid"><strong>Rigid</strong></div>
 <h4>Rigid Industries</h4>
 <div class="stars">★★★★★</div>
 <p>Premium LED off-road lighting. Adapt series is industry-leading.</p>
 <a href="https://www.amazon.com/s?k=Rigid+Industries&tag=brazenprodu01-20" target="_blank" class="buy-btn btn-store" style="font-size:.8rem;padding:8px 14px;background:#F0C14B;color:#111">Amazon →</a>
 </div>
 <div class="mfg-card">
+<div class="mfg-brand warn"><strong>Warn</strong></div>
 <h4>Warn Industries</h4>
 <div class="stars">★★★★★</div>
 <p>Winches, bumpers, and recovery gear. The industry benchmark.</p>
